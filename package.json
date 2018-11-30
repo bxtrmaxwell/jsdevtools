@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "lint": "eslint app.js ./lib/stringlib.js"
+    "lint": "eslint ./lib/stringlib.js --fix",
+    "format": "prettier --write ./lib/stringlib.js app.js --single-quote",
+    "revert": "git checkout -- lib/stringlib.js app.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +19,7 @@
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "prettier": "1.15.2"
   }
 }
