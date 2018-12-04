@@ -7,20 +7,27 @@
     "start": "node app.js",
     "lint": "eslint ./lib/stringlib.js --fix",
     "format": "prettier --write ./lib/stringlib.js app.js --single-quote",
-    "revert": "git checkout ."
+    "revert": "git checkout .",
+    "npmcheck": "npm-check -i prettier",
+    "npmcheck-update": "npm-check -u -i prettier"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "4.16.3",
-    "is-empty": "1.2.0",
-    "matrixmath": "2.2.2",
+    "express": "^4.16.4",
+    "is-empty": "^1.2.0",
     "reverse-string": "0.0.6"
   },
   "devDependencies": {
-    "eslint": "5.9.0",
-    "eslint-config-airbnb-base": "13.1.0",
-    "eslint-plugin-import": "2.14.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^1.2.0",
     "prettier": "1.15.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo 'RUNNING MY HOOK'"
+    }
   }
 }
