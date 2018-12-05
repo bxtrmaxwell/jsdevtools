@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'RUNNING MY HOOK'"
+      "pre-commit": "eslint **.js --fix && prettier **.js --write"
     }
   }
 }
