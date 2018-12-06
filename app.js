@@ -1,36 +1,35 @@
-var express = require('express')
-var app = express()
-var stringlib = require('./lib/stringlib')
-var isEmpty = require('is-empty')
+const express = require('express');
 
-app.use(function(req, res, next){
-    var str = req.query.str;
-    if(!haveStrParam(str))
-        return res.status(500).send({msg: "str is a required parameter"});
-    else{
-        req.strParam = str;
-        next();
-    }
-})
+const app = express();
+const isEmpty = require('is-empty');
+const stringlib = require('./lib/stringlib');
 
-//reverse the string
-app.get('/reverse', function (req, res){
-    res.send(stringlib.reverse(req.strParam))
+app.use((req, res, next) => {
+  const str = req.query.str;
+  if (!haveStrParam(str)) return res.status(500).send({ msg: 'str is a required parameter' });
+
+  req.strParam = str;
+  next();
 });
 
-//uppercase the string
-app.get('/upper', function(req, res){
-    res.send(stringlib.uppercase(req.strParam))
+// reverse the string
+app.get('/reverse', (req, res) => {
+  res.send(stringlib.reverse(req.strParam));
 });
 
-//lowercase the string
-app.get('/lower', function(req, res){
-    res.send(stringlib.lowercase(req.strParam))
+// uppercase the string
+app.get('/upper', (req, res) => {
+  res.send(stringlib.uppercase(req.strParam));
+});
+
+// lowercase the string
+app.get('/lower', (req, res) => {
+  res.send(stringlib.lowercase(req.strParam));
 });
 
 function haveStrParam(str){
-    return !isEmpty(str);
+  return !isEmpty(str);
 }
 
 
-app.listen(3000, function(){console.log('Example app listening on port 3000!')})
+app.listen(3000, () => {console.log('Example app listening on port 3000!');});
