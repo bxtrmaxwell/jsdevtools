@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "eslint lib/stringlib.js --fix && prettier lib/stringlib.js --write && git add lib/stringlib.js"
+      "pre-commit": "eslint lib/stringlib.js --fix && prettier lib/stringlib.js --write && git add . -A"
     }
   }
 }
