@@ -27,9 +27,9 @@ app.get('/lower', (req, res) => {
   res.send(stringlib.lowercase(req.strParam));
 });
 
-function haveStrParam(str){
+function haveStrParam(str) {
   return !isEmpty(str);
 }
 
 
-app.listen(3000, () => {console.log('Example app listening on port 3000!');});
+app.listen(3000, () => { console.log('Example app listening on port 3000!'); });
