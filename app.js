@@ -1,35 +1,19 @@
-const express = require('express');
+const lib = require('./lib/stringlib');
 
-const app = express();
-const isEmpty = require('is-empty');
-const stringlib = require('./lib/stringlib');
+const command = process.argv[2];
+const str = process.argv[3];
 
-app.use((req, res, next) => {
-  const str = req.query.str;
-  if (!haveStrParam(str)) return res.status(500).send({ msg: 'str is a required parameter' });
+switch (command) {
+  case 'reverse':
+    console.log(lib.reverse(str));
+    break;
+  case 'upper':
+    console.log(lib.uppercase(str));
+    break;
+  case 'lower':
+    console.log(lib.lowercase(str));
+    break;
+  default:
+    console.log('Valid commands are reverse, lower and upper');
 
-  req.strParam = str;
-  next();
-});
-
-// reverse the string
-app.get('/reverse', (req, res) => {
-  res.send(stringlib.reverse(req.strParam));
-});
-
-// uppercase the string
-app.get('/upper', (req, res) => {
-  res.send(stringlib.uppercase(req.strParam));
-});
-
-// lowercase the string
-app.get('/lower', (req, res) => {
-  res.send(stringlib.lowercase(req.strParam));
-});
-
-function haveStrParam(str){
-  return !isEmpty(str);
 }
-
-
-app.listen(3000, () => {console.log('Example app listening on port 3000!');});
