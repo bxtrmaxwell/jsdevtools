@@ -15,5 +15,4 @@ switch (command) {
     break;
   default:
     console.log('Valid commands are reverse, lower and upper');
-
 }
