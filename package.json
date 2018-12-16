@@ -4,11 +4,19 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "revert": "git checkout ."
+    "revert": "git checkout -- lib/stringlib.js ",
+    "revert-all": "git checkout .",
+    "lint": "eslint ./lib/string*.js",
+    "lint-fix": "eslint ./lib/stringlib.js --fix"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "reverse-string": "0.0.6"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   }
 }
