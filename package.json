@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "revert": "git checkout ."
+    "revert": "git checkout lib/stringlib.js",
+    "revert-all": "git checkout ."
   },
   "author": "",
   "license": "ISC",
