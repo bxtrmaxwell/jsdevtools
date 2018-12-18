@@ -13,7 +13,8 @@
     "underscore.string": "^3.3.5"
   },
   "devDependencies": {
-    "husky": "^1.2.1"
+    "husky": "^1.2.1",
+    "prettier": "^1.15.3"
   },
   "husky": {
     "hooks": {
