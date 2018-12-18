@@ -11,5 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "underscore.string": "^3.3.5"
+  },
+  "devDependencies": {
+    "husky": "^1.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo 'RUNNING MY HOOK'"
+    }
   }
 }
