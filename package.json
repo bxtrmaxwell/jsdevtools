@@ -5,11 +5,16 @@
   "main": "app.js",
   "scripts": {
     "revert": "git checkout lib/stringlib.js",
-    "revert-all": "git checkout ."
+    "revert-all": "git checkout .",
+    "npmcheck": "npm-check",
+    "npmcheck-update": "npm-check -u"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "underscore.string": "^3.3.5"
+  },
+  "devDependencies": {
+    "npm-check": "^5.9.0"
   }
 }
