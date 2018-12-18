@@ -18,7 +18,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "echo 'RUNNING MY HOOK'"
+      "pre-commit": "prettier lib/stringlib.js --write"
     }
   }
 }
